@@ -1008,34 +1008,32 @@ one5six913lbrcc
 foureightmppchbgz8lqbzqbjztwo7cksqxns
 zvhzgfpkhkone93nine`
 
+
 func main() {
 
 	var lines = strings.Split(inputPuzzle, "\n")
 
-	var result int
+    var result int
 
 	for _, line := range lines {
 
 		var firstNumber, lastNumber rune
-		var formedNumber string
+        var formedNumber string
 		var numberCount int
 
 		for _, char := range line {
 			if unicode.IsNumber(char) {
-
 				numberCount++
 
 				if firstNumber == 0 {
 					firstNumber = char
 				}
-
 				lastNumber = char
-
-				formedNumber = string(firstNumber) + string(lastNumber)
+                formedNumber = string(firstNumber) + string(lastNumber)
 			}
 		}
-		concatenatedNumbers, _ := strconv.Atoi(formedNumber)
-		result += int(concatenatedNumbers)
+        concatenatedNumbers, _ := strconv.Atoi(formedNumber)
+        result += int(concatenatedNumbers)
 	}
-	fmt.Print(result)
+    fmt.Print(result);
 }

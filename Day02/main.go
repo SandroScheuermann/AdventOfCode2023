@@ -111,17 +111,13 @@ func main() {
 
 	var sumOfIds, setNumber int
 	var setColor string
-
 	var games = strings.Split(inputGames, "\n")
 
 	for _, game := range games {
 
 		currentEntireGame := strings.TrimPrefix(game, "Game ")
-
 		splittedGameInfo := strings.SplitN(currentEntireGame, ":", 2)
-
 		splittedGameSets := strings.Split(splittedGameInfo[1], ";")
-
 		isValidGame := true
 
 		for _, set := range splittedGameSets {
@@ -137,18 +133,14 @@ func main() {
 					break
 				}
 			}
-
 			if !isValidGame {
 				break
 			}
 		}
-
 		if isValidGame {
 			convertedNumber, _ := strconv.Atoi(splittedGameInfo[0])
 			sumOfIds += convertedNumber
 		}
 	}
-
 	fmt.Printf("%d", sumOfIds)
 }
-
